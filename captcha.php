@@ -1,5 +1,5 @@
-<?php 
-use \ArPHP\I18N\Arabic;
+<?php
+require_once __DIR__ . "/FarsiGD.php";
 
 class FarsiCaptcha {
 
@@ -33,9 +33,7 @@ class FarsiCaptcha {
       }
    }
 
-   private function draw_text(string $text = "") {
-      $arabic = new Arabic('Glyphs');
-      $text  = $arabic->utf8Glyphs($text);
+   private function draw_text(string $text) {
       $black = imagecolorallocate($this->image, 0, 0, 0);
       $white = imagecolorallocate($this->image, 255, 255, 255);
       $textcolors = [$black, $white];
